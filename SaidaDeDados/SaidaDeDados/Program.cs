@@ -18,7 +18,7 @@ namespace ConsoleApplication2
             double preco2 = 650.50;
             double medida = 53.234567;
 
-            Console.ReadLine();
+            Console.WriteLine($"Produtos: \n{produto1}, cujo preço é {preco1} \n{produto2}, cujo preço é $ {preco2} \n\nRegistro: {idade} anos de idades, código {codigo} e gênero: {genero} \n\nMedida com oito casas decimais: {medida:F8} \nArredondado(três casas decimais): {medida:F3} \nSeparador decimal invariant culture: " + medida.ToString("F2", CultureInfo.InvariantCulture));
         }
     }
 }
