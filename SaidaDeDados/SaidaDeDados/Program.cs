@@ -10,14 +10,15 @@ namespace SaidaDeDados
         {
             SaidaDados();
             EntradaDados();
-            SomarDoisNumeros();
-            QualERaio();
-            DiferencaProduto();
-            SalarioFun();
-            ValorPeça();
-            ENegativo();
-            EMultiplo();
-            JogoHora();
+
+            Exercicios1 exercicios1 = new Exercicios1();
+            exercicios1.MetodosExercicio1();
+            
+            Exercicios2 exercicios2 = new Exercicios2();
+            exercicios2.MetodosExercicios2();
+
+            Loops exerciciosLoops = new Loops();
+            exerciciosLoops.MetodosLoops();
         }
 
         #region SaidaDados
@@ -64,151 +65,6 @@ namespace SaidaDeDados
             Console.WriteLine(vet[2]);
         }
         #endregion
-
-        #region SomarDoisNumeros
-        static void SomarDoisNumeros()
-        {
-
-            Console.WriteLine("Escreva um numero:");
-            int a = int.Parse(Console.ReadLine());
-
-            Console.WriteLine("Escreva outro numero");
-            int b = int.Parse(Console.ReadLine());
-            var result = a + b;
-
-            Console.WriteLine($"SOMA = {result}");
-        }
-        #endregion
-
-        #region QualERaio
-        static void QualERaio()
-        {
-            double pi = 3.14159;
-            Console.WriteLine("Escreva o valor do raio: (double)");
-            double raio = double.Parse(Console.ReadLine());
-            double area = pi * (raio * raio);
-
-            Console.WriteLine($"A = {area:F4}");
-        }
-        #endregion
-
-        #region DiferencaProduto
-
-        static void DiferencaProduto()
-        {
-            Console.WriteLine("Escreva um numero:");
-            int a = int.Parse(Console.ReadLine());
-
-            Console.WriteLine("Escreva outro numero:");
-            int b = int.Parse(Console.ReadLine());
-
-            Console.WriteLine("Escreva outro numero:");
-            int c = int.Parse(Console.ReadLine());
-
-            Console.WriteLine("Escreva outro numero:");
-            int d = int.Parse(Console.ReadLine());
-
-            int produto = (a * b) - (c * d);
-            Console.WriteLine($"DIFERENÇA = {produto}");
-        }
-        #endregion
-
-        #region SalarioFun
-        static void SalarioFun()
-        {
-            Console.WriteLine($"Qual é o numero do funcionário?");
-            int funNumero = int.Parse(Console.ReadLine());
-
-            Console.WriteLine($"Qual é o numero de horas trabalhadas?");
-            int horasTrabalhas = int.Parse(Console.ReadLine());
-
-            Console.WriteLine($"Quanto ele recebe por hora?");
-            double valorHora = double.Parse(Console.ReadLine());
-
-            double result = valorHora * horasTrabalhas;
-
-            Console.WriteLine($"Number = {funNumero} \nSalary = U$ {result:F2}");
-        }
-        #endregion
-
-        #region ValorPeça
-        static void ValorPeça()
-        {
-            int cod1, cod2, qte1, qte2;
-            double preco1, preco2, total;
-
-            string[] valores = Console.ReadLine().Split(' ');
-            cod1 = int.Parse(valores[0]);
-            qte1 = int.Parse(valores[1]);
-            preco1 = double.Parse(valores[2], CultureInfo.InvariantCulture);
-
-            valores = Console.ReadLine().Split(' ');
-            cod2 = int.Parse(valores[0]);
-            qte2 = int.Parse(valores[1]);
-            preco2 = double.Parse(valores[2], CultureInfo.InvariantCulture);
-
-            total = preco1 * qte1 + preco2 * qte2;
-
-            Console.WriteLine("VALOR A PAGAR: R$ " + total.ToString("F2", CultureInfo.InvariantCulture));
-        }
-        #endregion
-
-        #region ENegativo
-        static void ENegativo()
-        {
-            int N = int.Parse(Console.ReadLine());
-
-            if (N < 0)
-            {
-                Console.WriteLine("NEGATIVO");
-            }
-            else
-            {
-                Console.WriteLine("NAO NEGATIVO");
-            }
-        }
-        #endregion
-
-        #region EMultiplo
-        static void EMultiplo()
-        {
-            string[] valores = Console.ReadLine().Split(' ');
-            int A = int.Parse(valores[0]);
-            int B = int.Parse(valores[1]);
-
-            if (A % B == 0 || B % A == 0)
-            {
-                Console.WriteLine("Sao Multiplos");
-            }
-            else
-            {
-                Console.WriteLine("Nao sao Multiplos");
-            }
-
-        }
-        #endregion
-
-        #region JogoHora
-        static void JogoHora()
-        {
-            string[] valores = Console.ReadLine().Split(' ');
-            int horaInicial = int.Parse(valores[0]);
-            int horaFinal = int.Parse(valores[1]);
-
-            int duracao;
-            if (horaInicial < horaFinal)
-            {
-                duracao = horaFinal - horaInicial;
-            }
-            else
-            {
-                duracao = 24 - horaInicial + horaFinal;
-            }
-
-            Console.WriteLine("O JOGO DUROU " + duracao + " HORA(S)");
-        }
-        #endregion
-
 
     }
 }
